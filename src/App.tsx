@@ -7,8 +7,10 @@ import { Dashboard } from './pages/Dashboard'
 import { Tickets } from './pages/Tickets'
 import { NewTicket } from './pages/NewTicket'
 import { TicketDetail } from './pages/TicketDetail'
+import { Login } from './pages/Login'
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
   const [page, setPage] = useState('dashboard')
   const [selected, setSelected] = useState<Ticket | null>(null)
 
@@ -21,6 +23,8 @@ export default function App() {
     setSelected(null)
     setPage(next)
   }
+
+  if (!loggedIn) return <Login onLogin={() => setLoggedIn(true)} />
 
   let content
   if (page === 'tickets') content = <Tickets tickets={tickets} onSelect={openTicket} />
