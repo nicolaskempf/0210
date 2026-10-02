@@ -1,0 +1,2 @@
+interface TopbarProps { onNew: () => void }
+export function Topbar({onNew}: TopbarProps){return <header className="flex items-center justify-between border-b border-gray-200 bg-white px-4 py-4 md:px-8"><div><p className="text-sm text-gray-500">Sistema de chamados</p><p className="font-semibold">Projeto Integrado</p></div><button onClick={onNew} className="hidden rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 sm:block">Novo chamado</button></header>}
