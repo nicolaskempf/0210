@@ -1,10 +1,12 @@
+import type { FormEvent } from 'react'
+
 interface NewTicketProps {
   onCancel: () => void
   onCreated: () => void
 }
 
 export function NewTicket({ onCancel, onCreated }: NewTicketProps) {
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     alert('Chamado criado com sucesso! (dado simulado)')
     onCreated()
